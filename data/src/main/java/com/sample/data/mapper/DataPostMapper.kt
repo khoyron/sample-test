@@ -1,16 +1,14 @@
 package com.sample.data.mapper
 
-import com.khoiron.data.entity.PostEntity
 import com.sample.data.model.PostModel
-import com.google.gson.Gson
-
+import com.sample.data.entity.PostEntity
+import com.sample.data.network.Serializer
 
 
 class DataPostMapper {
     fun mapping(response: String): ArrayList<PostModel> {
         val data   = ArrayList<PostModel>()
-        val gson = Gson()
-        val dataEntity = gson.fromJson(response, Array<PostEntity>::class.java)
+        val dataEntity = Serializer.deserialize(response, Array<PostEntity>::class.java)
 
         dataEntity.forEach {
             val mData = PostModel()

@@ -1,4 +1,4 @@
-package com.khoiron.data.entity
+package com.sample.data.entity
 
 import com.google.gson.annotations.SerializedName
 

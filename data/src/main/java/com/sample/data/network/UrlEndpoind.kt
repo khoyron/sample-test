@@ -12,5 +12,18 @@ interface UrlEndpoind {
     fun getDataPost(): Call<ResponseBody>
 
     @GET(MyURL.URL_DETAIL_POST)
-    fun getDataDetailPost(@Path("id")id:String, @Path("comments")comment:String): Call<ResponseBody>
+    fun getDataDetailPost(@Path("id")id:String): Call<ResponseBody>
+
+    @GET(MyURL.URL_COMMENT)
+    fun getCommentPost(@Path("id")id:String): Call<ResponseBody>
+
+    @GET(MyURL.GET_USER)
+    fun getUser(@Path("id")id:String): Call<ResponseBody>
+
+    @GET(MyURL.GET_ALBUMS)
+    fun getAlbums(@Path("id")id:String): Call<ResponseBody>
+
+
+    @GET(MyURL.GET_PHOTO)
+    fun getPhoto(@Path("id")id:String): Call<ResponseBody>
 }

@@ -9,6 +9,8 @@ object Serializer {
         return gson.toJson(`object`, clazz)
     }
 
+
+
     fun serialize(`object`: Any): String {
         return gson.toJson(`object`)
     }

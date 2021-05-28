@@ -11,3 +11,8 @@
 /build
 /captures
 .externalNativeBuild
+build
+presentation/build
+data/build
+.cxx
+local.properties

@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".HomeActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
 
     <com.sample.jsonplaceholderapp.page.ListAllPostView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:id="@+id/page_list_post">
     </com.sample.jsonplaceholderapp.page.ListAllPostView>
+
+    <com.sample.jsonplaceholderapp.page.DetailPostView
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:id="@+id/page_detail_list_post">
+    </com.sample.jsonplaceholderapp.page.DetailPostView>
+
+    <com.sample.jsonplaceholderapp.page.ProfileView
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:id="@+id/page_profile">
+    </com.sample.jsonplaceholderapp.page.ProfileView>
 
 </LinearLayout>

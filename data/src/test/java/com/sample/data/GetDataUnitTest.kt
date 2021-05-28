@@ -1,7 +1,7 @@
 package com.sample.data
 
 import com.sample.data.callback.*
-import com.sample.data.endpoint.GetDataPlaceholder
+import com.sample.data.endpoint.GetDataNetwork
 import com.sample.data.model.*
 import org.junit.Test
 
@@ -12,7 +12,7 @@ import java.util.concurrent.CountDownLatch
  *
  * @see [Testing documentation](http://d.android.com/tools/testing)
  */
-class ExampleUnitTest {
+class GetDataUnitTest {
 
     /**
      * test for get api data post
@@ -23,7 +23,7 @@ class ExampleUnitTest {
     fun test_getDataPost() {
         val latch = CountDownLatch(1)
 
-        GetDataPlaceholder().getDataPost(object : CallbackDataPost {
+        GetDataNetwork().getDataPost(object : CallbackDataPost {
             override fun success(data: ArrayList<PostModel>) {
                 data.forEach {
                     println("--------------------")
@@ -56,7 +56,7 @@ class ExampleUnitTest {
     fun test_getDetailPost() {
         val latch = CountDownLatch(1)
 
-        GetDataPlaceholder()
+        GetDataNetwork()
             .getDetailPost("1",object : CallbackDetailPost {
             override fun success(data: PostModel) {
                 println("id "+data.idPost)
@@ -87,7 +87,7 @@ class ExampleUnitTest {
     fun test_getPostComment() {
         val latch = CountDownLatch(1)
 
-        GetDataPlaceholder()
+        GetDataNetwork()
             .getPostComment("1",object : CallbackCommentPost {
                 override fun success(data: ArrayList<CommentModel>) {
                     println("----------")
@@ -118,7 +118,7 @@ class ExampleUnitTest {
     fun test_getUser() {
         val latch = CountDownLatch(1)
 
-        GetDataPlaceholder()
+        GetDataNetwork()
             .getUser("1",object : CallbackUser {
                 override fun success(data: UserModel) {
                     println("----------")
@@ -150,7 +150,7 @@ class ExampleUnitTest {
     fun test_getAlbums() {
         val latch = CountDownLatch(1)
 
-        GetDataPlaceholder()
+        GetDataNetwork()
             .getAlbums("1",object : CallbackAlbums {
                 override fun success(data: ArrayList<AlbumModel>) {
                     println("----------")
@@ -182,7 +182,7 @@ class ExampleUnitTest {
     fun test_getPotho() {
         val latch = CountDownLatch(1)
 
-        GetDataPlaceholder()
+        GetDataNetwork()
             .getPhoto("1",object : CallbackPhoto {
                 override fun success(data: ArrayList<PhotoModel>) {
                     println("----------")

@@ -10,7 +10,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Call
 
-class GetDataPlaceholder : BaseGetData(), DataRepository {
+class GetDataNetwork : BaseGetData(), DataRepository {
 
     @Inject
     lateinit var api : UrlEndpoind

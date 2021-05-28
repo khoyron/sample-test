@@ -1,27 +1,18 @@
 package com.sample.jsonplaceholderapp.page
 
-
-import android.view.View
 import android.content.Context
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import android.widget.LinearLayout
-import com.sample.jsonplaceholderapp.R
+import com.sample.jsonplaceholderapp.databinding.DetailPostViewBinding
 
-class ProfileView : LinearLayout {
+class ProfileView @JvmOverloads constructor(context: Context,
+                                            attrs: AttributeSet? = null,
+                                            defStyleAttr: Int = 0) : LinearLayout(context, attrs, defStyleAttr) {
 
-    constructor(context: Context) : super(context) {
-        init()
-    }
+    private val binding = DetailPostViewBinding.inflate(LayoutInflater.from(context), this, true)
 
-    var pictureImagePath          = ""
-
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-        init()
-    }
-
-    private fun init() {
-        setOrientation(VERTICAL)
-        View.inflate(context, R.layout.profile_view, this)
+    init {
 
     }
 }

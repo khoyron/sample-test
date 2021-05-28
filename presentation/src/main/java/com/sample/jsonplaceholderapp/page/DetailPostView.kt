@@ -1,26 +1,66 @@
 package com.sample.jsonplaceholderapp.page
 
-import android.view.View
 import android.content.Context
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import android.widget.LinearLayout
-import com.sample.jsonplaceholderapp.R
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.sample.data.callback.CallbackCommentPost
+import com.sample.data.endpoint.GetDataNetwork
+import com.sample.data.model.CommentModel
+import com.sample.data.model.PostModel
+import com.sample.jsonplaceholderapp.adapter.ListCommentAdapter
+import com.sample.jsonplaceholderapp.callback.CallbackRecyclerView
+import com.sample.jsonplaceholderapp.databinding.DetailPostViewBinding
 
-class DetailPostView : LinearLayout {
+class DetailPostView @JvmOverloads constructor(context: Context,
+                                               attrs: AttributeSet? = null,
+                                               defStyleAttr: Int = 0) : LinearLayout(context, attrs, defStyleAttr) {
 
-    constructor(context: Context) : super(context) {
-        init()
+    private val binding = DetailPostViewBinding.inflate(LayoutInflater.from(context), this, true)
+
+    val commentAdapter by lazy { ListCommentAdapter(context) }
+    val dataList = ArrayList<CommentModel>()
+
+    init {
+        initRecyclerView()
     }
 
-    var pictureImagePath          = ""
+    private fun initRecyclerView() {
+        binding.rvComment.apply {
+            val lManager = LinearLayoutManager(context)
+            lManager.orientation = LinearLayoutManager.VERTICAL
+            layoutManager = lManager
+            itemAnimator = DefaultItemAnimator()
+            adapter = commentAdapter
+        }
 
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-        init()
+        commentAdapter.setCallbackListener(object :CallbackRecyclerView{
+            override fun callback(view: Int, position: Int) {
+
+            }
+        })
     }
 
-    private fun init() {
-        setOrientation(VERTICAL)
-        View.inflate(context, R.layout.detail_post_view, this)
+    fun setDataDetailListPost(data:PostModel){
+        binding.tvName.text  = data.profile.username
+        binding.tvTitle.text = data.title
+        binding.tvBody.text  = data.body
+        getDataComment(data.idPost)
+    }
 
+    private fun getDataComment(idPost: String) {
+        GetDataNetwork().getPostComment(idPost,object :CallbackCommentPost{
+            override fun success(data: ArrayList<CommentModel>) {
+                dataList.clear()
+                dataList.addAll(data)
+                commentAdapter.setData(data)
+            }
+
+            override fun failed(massege: String) {
+
+            }
+        })
     }
 }

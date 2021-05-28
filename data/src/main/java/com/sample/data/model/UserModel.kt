@@ -1,9 +1,13 @@
 package com.sample.data.model
 
-class UserModel {
-    var username = ""
-    var email    = ""
-    var company  = ""
-    var address  = ""
-    var albums   = ArrayList<AlbumModel>()
-}
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+class UserModel (
+    var username :String = "",
+    var email    :String = "",
+    var company  :String = "",
+    var address  :String = "",
+    var albums   : ArrayList<AlbumModel> = ArrayList()
+): Parcelable

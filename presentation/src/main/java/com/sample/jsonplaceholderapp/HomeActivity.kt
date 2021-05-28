@@ -2,6 +2,7 @@ package com.sample.jsonplaceholderapp
 
 import android.view.View.*
 import com.sample.data.model.PostModel
+import com.sample.data.model.UserModel
 import com.sample.jsonplaceholderapp.utility.Constant
 import com.sample.jsonplaceholderapp.databinding.HomeMainBinding
 import com.sample.jsonplaceholderapp.callback.PageProfileCallback
@@ -16,6 +17,7 @@ class HomeActivity : BaseActivity<HomeMainBinding>(),
 
     override fun onMain() {
         binding.pageListPost.callbackListPostPage(this)
+        binding.pageDetailListPost.callbackDetailListPage(this)
     }
 
     override fun backFromDetailPost() {
@@ -40,6 +42,14 @@ class HomeActivity : BaseActivity<HomeMainBinding>(),
         binding.pageListPost.visibility       = GONE
         binding.pageDetailListPost.visibility = VISIBLE
         binding.pageProfile.visibility        = GONE
+    }
+
+    override fun gotoProfilePage(profile: UserModel) {
+        binding.pageListPost.visibility       = GONE
+        binding.pageDetailListPost.visibility = GONE
+        binding.pageProfile.visibility        = VISIBLE
+        binding.pageProfile.setDataProfile(profile)
+        positionPage = Constant.PROFILE_PAGE_POSITION
     }
 
     override fun onBackPressed() {

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sample.jsonplaceholderapp.adapter.ListCommentAdapter
 import com.sample.jsonplaceholderapp.callback.CallbackRecyclerView
+import com.sample.jsonplaceholderapp.callback.PageProfileCallback
 import com.sample.jsonplaceholderapp.databinding.DetailPostViewBinding
 
 class DetailPostView @JvmOverloads constructor(context: Context,
@@ -20,8 +21,10 @@ class DetailPostView @JvmOverloads constructor(context: Context,
 
     private val binding = DetailPostViewBinding.inflate(LayoutInflater.from(context), this, true)
 
+    lateinit var callback : PageProfileCallback
     val commentAdapter by lazy { ListCommentAdapter(context) }
     val dataList = ArrayList<CommentModel>()
+    var dataProfile = PostModel()
 
     init {
         initRecyclerView()
@@ -41,9 +44,14 @@ class DetailPostView @JvmOverloads constructor(context: Context,
 
             }
         })
+
+        binding.tvName.setOnClickListener {
+            callback.gotoProfilePage(dataProfile.profile)
+        }
     }
 
     fun setDataDetailListPost(data:PostModel){
+        dataProfile = data
         binding.tvName.text  = data.profile.username
         binding.tvTitle.text = data.title
         binding.tvBody.text  = data.body
@@ -67,5 +75,9 @@ class DetailPostView @JvmOverloads constructor(context: Context,
     private fun clearComment() {
         dataList.clear()
         commentAdapter.setData(dataList)
+    }
+
+    fun callbackDetailListPage(mCallback: PageProfileCallback) {
+        callback = mCallback
     }
 }

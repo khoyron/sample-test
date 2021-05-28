@@ -5,7 +5,7 @@ this project for sample unit testing and ui testing
 
 Module
 - data => data and domain (JUnit)
-- presentation => desaign patern and ui/ux layer (espresso)
+- presentation => design patern and ui/ux layer (espresso)
 
 testing
 - JUnit

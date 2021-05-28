@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+    <TextView
+            android:id="@+id/tv_galery_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Galeri name"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="15dp"
+            android:textSize="12dp"
+            android:fontFamily="sans-serif">
+    </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_photo"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

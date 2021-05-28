@@ -4,12 +4,12 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
+import com.sample.data.model.PostModel
+import com.sample.data.model.CommentModel
+import com.sample.data.endpoint.GetDataNetwork
+import com.sample.data.callback.CallbackCommentPost
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sample.data.callback.CallbackCommentPost
-import com.sample.data.endpoint.GetDataNetwork
-import com.sample.data.model.CommentModel
-import com.sample.data.model.PostModel
 import com.sample.jsonplaceholderapp.adapter.ListCommentAdapter
 import com.sample.jsonplaceholderapp.callback.CallbackRecyclerView
 import com.sample.jsonplaceholderapp.databinding.DetailPostViewBinding
@@ -47,13 +47,13 @@ class DetailPostView @JvmOverloads constructor(context: Context,
         binding.tvName.text  = data.profile.username
         binding.tvTitle.text = data.title
         binding.tvBody.text  = data.body
+        clearComment()
         getDataComment(data.idPost)
     }
 
     private fun getDataComment(idPost: String) {
         GetDataNetwork().getPostComment(idPost,object :CallbackCommentPost{
             override fun success(data: ArrayList<CommentModel>) {
-                dataList.clear()
                 dataList.addAll(data)
                 commentAdapter.setData(data)
             }
@@ -62,5 +62,10 @@ class DetailPostView @JvmOverloads constructor(context: Context,
 
             }
         })
+    }
+
+    private fun clearComment() {
+        dataList.clear()
+        commentAdapter.setData(dataList)
     }
 }

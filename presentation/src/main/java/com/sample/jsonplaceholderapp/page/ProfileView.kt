@@ -4,7 +4,12 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.sample.data.model.PhotoModel
 import com.sample.data.model.UserModel
+import com.sample.jsonplaceholderapp.adapter.ListPhotoAdapter
+import com.sample.jsonplaceholderapp.callback.CallbackRecyclerViewListPost
 import com.sample.jsonplaceholderapp.databinding.ProfileViewBinding
 
 class ProfileView @JvmOverloads constructor(context: Context,

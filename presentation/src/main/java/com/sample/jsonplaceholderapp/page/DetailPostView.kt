@@ -45,14 +45,14 @@ class DetailPostView @JvmOverloads constructor(context: Context,
             }
         })
 
-        binding.tvName.setOnClickListener {
+        binding.tvNameDetail.setOnClickListener {
             callback.gotoProfilePage(dataProfile.profile)
         }
     }
 
     fun setDataDetailListPost(data:PostModel){
         dataProfile = data
-        binding.tvName.text  = data.profile.username
+        binding.tvNameDetail.text  = data.profile.username
         binding.tvTitle.text = data.title
         binding.tvBody.text  = data.body
         clearComment()

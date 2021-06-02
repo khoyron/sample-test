@@ -13,9 +13,9 @@ import com.sample.jsonplaceholderapp.utility.Constant
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.DefaultItemAnimator
 import com.sample.jsonplaceholderapp.adapter.ListPostAdapter
-import com.sample.jsonplaceholderapp.callback.CallbackRecyclerViewListPost
 import com.sample.jsonplaceholderapp.callback.PageListPostCallback
 import com.sample.jsonplaceholderapp.databinding.ListAllPostViewBinding
+import com.sample.jsonplaceholderapp.callback.CallbackRecyclerViewListPost
 
 class ListAllPostView @JvmOverloads constructor(context: Context,
                                                 attrs: AttributeSet? = null,

@@ -41,6 +41,9 @@ class ListPhotoAdapter(val context :Context) : RecyclerView.Adapter<ListPhotoAda
                     .into(binding.tvImage)
             }
 
+            itemView.setOnClickListener {
+                callback.callback(Constant.ONCLICK_POST,position,UserModel())
+            }
         }
     }
 

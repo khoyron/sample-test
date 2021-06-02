@@ -12,10 +12,8 @@ testing
 - espresso
 
 # todo
-- add detail profile
-- add show image galery
+- add show image galery in profile
 - add loading in all page
-- testing presentation with espresso
 - testing with mockito
 - testing with robolectric 
 - implement design pattern in presentation layer 

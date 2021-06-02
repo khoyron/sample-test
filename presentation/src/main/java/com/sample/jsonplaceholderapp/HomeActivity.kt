@@ -24,6 +24,7 @@ class HomeActivity : BaseActivity<HomeMainBinding>(),
         binding.pageListPost.visibility       = VISIBLE
         binding.pageDetailListPost.visibility = GONE
         binding.pageProfile.visibility        = GONE
+        positionPage = Constant.LIST_PAGE_POSITION
     }
 
     override fun backFromListPost() {
@@ -42,6 +43,7 @@ class HomeActivity : BaseActivity<HomeMainBinding>(),
         binding.pageListPost.visibility       = GONE
         binding.pageDetailListPost.visibility = VISIBLE
         binding.pageProfile.visibility        = GONE
+        positionPage = Constant.DETAIL_LIST_PAGE_POSITION
     }
 
     override fun gotoProfilePage(profile: UserModel) {

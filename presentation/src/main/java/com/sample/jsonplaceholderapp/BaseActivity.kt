@@ -27,7 +27,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
     protected lateinit var pDialog: ProgressDialog
     protected var statusInternet: Boolean = false
-    protected val binding: VB by lazy { bindLayout() }
+    val binding: VB by lazy { bindLayout() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

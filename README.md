@@ -11,6 +11,9 @@ testing
 - JUnit
 - espresso
 
+CI/CD
+-travis
+
 # todo
 - add show image galery in profile
 - add loading in all page
@@ -18,3 +21,5 @@ testing
 - testing with robolectric 
 - implement design pattern in presentation layer 
 - testing design pattern
+
+

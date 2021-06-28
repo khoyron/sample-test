@@ -13,15 +13,11 @@ import android.content.Context
 import android.view.WindowManager
 import android.app.ProgressDialog
 import android.app.ActivityOptions
-import androidx.fragment.app.Fragment
 import android.net.ConnectivityManager
 import android.annotation.SuppressLint
-import android.content.DialogInterface
-import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.DialogFragment
-import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.BuildConfig
 import androidx.viewbinding.ViewBinding
+import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 

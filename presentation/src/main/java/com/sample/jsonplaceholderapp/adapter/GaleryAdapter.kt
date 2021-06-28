@@ -71,6 +71,5 @@ class GaleryAdapter(val context :Context) : RecyclerView.Adapter<GaleryAdapter.G
         notifyDataSetChanged()
     }
 
-    inner class GaleryViewHolder(val binding: ItemAdapterGaleryBinding)
-        :RecyclerView.ViewHolder(binding.root)
+    inner class GaleryViewHolder(val binding: ItemAdapterGaleryBinding) :RecyclerView.ViewHolder(binding.root)
 }

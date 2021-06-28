@@ -1,7 +1,7 @@
 package com.sample.data
 
-import com.sample.data.callback.*
 import com.sample.data.endpoint.GetDataNetwork
+import com.sample.data.callback.*
 import com.sample.data.model.*
 import org.junit.Test
 

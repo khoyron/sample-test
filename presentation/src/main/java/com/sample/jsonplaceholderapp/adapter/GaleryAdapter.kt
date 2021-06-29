@@ -3,14 +3,14 @@ package com.sample.jsonplaceholderapp.adapter
 import android.view.ViewGroup
 import android.content.Context
 import android.view.LayoutInflater
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.sample.data.model.UserModel
+import com.sample.data.model.AlbumModel
 import com.sample.data.callback.CallbackUser
 import com.sample.data.endpoint.GetDataNetwork
 import androidx.recyclerview.widget.RecyclerView
-import com.sample.data.model.AlbumModel
 import com.sample.jsonplaceholderapp.utility.Constant
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sample.jsonplaceholderapp.callback.CallbackRecyclerViewListPost
 import com.sample.jsonplaceholderapp.databinding.ItemAdapterGaleryBinding
 

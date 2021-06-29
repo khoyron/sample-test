@@ -34,7 +34,7 @@ script:
 deploy:
   provider: releases
   api_key: $GITHUB_API_KEY
-  file: $TRAVIS_BUILD_DIR/app/build/outputs/apk/release/app-release.apk
+  file: $TRAVIS_BUILD_DIR/presentation/build/outputs/apk/release/app-release.apk
   skip_cleanup: true
   name: dev-build-$TRAVIS-TAG
   body: Automatic build of $TRAVIS_BRANCH ($TRAVIS_COMMIT) built by Travis CI

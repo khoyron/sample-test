@@ -12,7 +12,7 @@ testing
 - espresso
 
 CI/CD
--travis
+- Travis
 
 # todo
 - add show image galery in profile
